@@ -1,4 +1,4 @@
-package Class3;
+package class3;
 
 import java.util.Arrays;
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-package DecisionsExercises;
+package decisionsExercises;
 
 import java.util.Scanner;
 

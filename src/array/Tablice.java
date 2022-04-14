@@ -1,4 +1,4 @@
-package Class3;
+package array;
 
 public class Tablice {
     public static void main(String[] args) {

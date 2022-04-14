@@ -1,4 +1,4 @@
-package Class3;
+package class3;
 
 public class ForEach {
     public static void main(String[] args) {

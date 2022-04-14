@@ -1,4 +1,4 @@
-package Class3;
+package array;
 
 import java.util.Scanner;
 

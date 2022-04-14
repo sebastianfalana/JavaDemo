@@ -10,6 +10,7 @@ public class exerciseFirst {
         int numberToGuess = getRandomNumber();
         System.out.println("Proszę zgadnij liczbę z zakresu 0-99");
 
+        // get numbers from user
         for (int i = 1; i <= 5; i++) {
             int number = getNumberFromUser();
             if (number == numberToGuess) {
@@ -20,6 +21,8 @@ public class exerciseFirst {
             } else {
                 System.out.println("Podałeś za dużą liczbę");
             }
+
+            // how many trials left
             if (i != 5) {
                 System.out.println("Masz jeszcze " + (5 - i) + " próby");
             } else {

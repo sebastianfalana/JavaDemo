@@ -8,7 +8,7 @@ public class exerciseFirst {
     public static void main(String[] args) {
 
         int numberToGuess = getRandomNumber();
-        System.out.println("Proszę podaj liczbę z zakresu 0-99:");
+        System.out.println("Proszę zgadnij liczbę z zakresu 0-99");
 
         for (int i = 1; i <= 5; i++) {
             int number = getNumberFromUser();

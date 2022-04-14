@@ -16,6 +16,7 @@ public class exerciseSecond {
             numbers[i] = scanner.nextInt();
         }
 
+        //rewrite array number to array reversed
         for (int i = 0; i < arrayHigh; i++) {
             reversed[arrayHigh - i - 1] = numbers[i];
         }

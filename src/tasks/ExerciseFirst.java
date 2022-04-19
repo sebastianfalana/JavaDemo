@@ -3,7 +3,7 @@ package tasks;
 import java.util.Random;
 import java.util.Scanner;
 
-public class exerciseFirst {
+public class ExerciseFirst {
 
     public static void main(String[] args) {
 

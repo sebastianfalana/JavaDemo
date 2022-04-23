@@ -7,11 +7,12 @@ public class ExerciseFirst {
 
     public static void main(String[] args) {
 
-        int numberToGuess = getRandomNumber();
+        int numberToGuess = getRandomNumber(100);
         System.out.println("Proszę zgadnij liczbę z zakresu 0-99");
 
-        // get numbers from user
-        for (int i = 1; i <= 5; i++) {
+        int maxNumberOfTrials = 5;
+
+        for (int i = 1; i <= maxNumberOfTrials; i++) {
             int number = getNumberFromUser();
             if (number == numberToGuess) {
                 System.out.println("Zgadłeś!!!");
@@ -22,17 +23,18 @@ public class ExerciseFirst {
                 System.out.println("Podałeś za dużą liczbę");
             }
 
-            // how many trials left
-            if (i != 5) {
-                System.out.println("Masz jeszcze " + (5 - i) + " próby");
+
+            if (i != maxNumberOfTrials) {
+                System.out.println("Masz jeszcze " + (maxNumberOfTrials - i) + " próby");
             } else {
                 System.out.println("Niestety nie udało Ci się zgadnąć, poprawna odpowiedź to: " + numberToGuess);
             }
         }
     }
 
-    public static int getRandomNumber() {
-        return new Random().nextInt(100);
+    public static int getRandomNumber(int range) {
+
+        return new Random().nextInt(range);
     }
 
     public static int getNumberFromUser() {

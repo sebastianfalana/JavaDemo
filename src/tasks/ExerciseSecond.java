@@ -4,19 +4,18 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class ExerciseSecond {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int arrayHigh = getArrayHigh();
-        int[] numbers = new int[arrayHigh];
+        int[] numbers = getArrayValues(arrayHigh);
         int[] reversed = new int[arrayHigh];
 
-        //get array values
-        for (int i = 0; i < arrayHigh; i++) {
-            System.out.println("Podaj " + i + " cyfrę");
-            numbers[i] = scanner.nextInt();
-        }
+//        for (int i = 0; i < arrayHigh; i++) {
+//            System.out.println("Podaj " + i + " cyfrę");
+//            numbers[i] = scanner.nextInt();
+//        }
 
-        //rewrite array number to array reversed
         for (int i = 0; i < arrayHigh; i++) {
             reversed[arrayHigh - i - 1] = numbers[i];
         }
@@ -26,6 +25,17 @@ public class ExerciseSecond {
         System.out.println("Tablica reveresd: " + Arrays.toString(reversed));
         System.out.println("Tablica numbers:  " + Arrays.toString(numbers));
 
+    }
+
+    public static int[] getArrayValues(int arrayHigh) {
+        Scanner scanner = new Scanner(System.in);
+        int[] numbers = new int[arrayHigh];
+        for (int i = 0; i < arrayHigh; i++) {
+            System.out.println("Podaj " + (i + 1) + " cyfrę");
+            numbers[i] = scanner.nextInt();
+        }
+
+        return numbers;
     }
 
     public static int getArrayHigh() {

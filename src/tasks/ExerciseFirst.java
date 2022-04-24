@@ -33,7 +33,6 @@ public class ExerciseFirst {
     }
 
     public static int getRandomNumber(int range) {
-
         return new Random().nextInt(range);
     }
 

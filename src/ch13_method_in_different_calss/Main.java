@@ -17,7 +17,7 @@ public class Main {
         switch (number) {
             case 1:
                 System.out.println("Wynik dodawania to: " + Calculator.add(a, b));
-                System.out.println(Calculator.add(, b));
+                Calculator.add(UserInputHandler.getNumberFromUser(), UserInputHandler.getNumberFromUser());
                 break;
             case 2:
                 System.out.println("Wynik odejmowania to: " + Calculator.substract(a, b));

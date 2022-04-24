@@ -9,7 +9,7 @@ public class PassingPrintingArray {
         int[] array = new int[n];
 
         passNumbers(array);
-        printArray(array, n);
+        printArray(array);
         System.out.println("");
         System.out.println("Sum of array = " + sumArray(array));
     }
@@ -30,7 +30,7 @@ public class PassingPrintingArray {
         }
     }
 
-    public static void printArray(int[] array, int n) {
+    public static void printArray(int[] array) {
         for (int i = 0; i < array.length; i++) {
             System.out.print(" " + array[i]);
         }

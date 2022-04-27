@@ -8,4 +8,5 @@ public class Pinquin extends Bird {
         super(name, wingspan, false);
         this.swimmingSpeed = swimmingSpeed;
     }
+
 }

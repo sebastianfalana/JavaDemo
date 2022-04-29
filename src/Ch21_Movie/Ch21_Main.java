@@ -2,6 +2,8 @@ package Ch21_Movie;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+import java.util.Scanner;
 
 public class Ch21_Main {
 
@@ -12,6 +14,27 @@ public class Ch21_Main {
         Actor joannaWierzbicka = new Actor("Joanna", "Wierzbicka");
         Actor trevorSzaszy = new Actor("Trewor", "Szaszy");
         Actor annaKulow = new Actor("Anna", "Kulow");
+
+//        List<String> actors = new ArrayList<>();
+//        actors.add("AA");
+//        actors.add("BB");
+//        actors.add("CC");
+//
+//        List<Actor> actorsSecond = new ArrayList<>();
+//        actorsSecond.add(new Actor("AA", "LA"));
+//        actorsSecond.add(new Actor("BB", "LB"));
+//        actorsSecond.add(new Actor("CC", "LC"));
+//
+//        for (String act :
+//                actors) {
+//            System.out.println(act);
+//        }
+//
+//        for (Actor act2 :
+//                actorsSecond) {
+//            System.out.println(act2.getFirstName() + " " + act2.getLastName());
+//        }
+
 
         List<Actor> pierwszyFilmActors = new ArrayList<>();
         pierwszyFilmActors.add(januszKowal);
@@ -36,16 +59,81 @@ public class Ch21_Main {
         Movie drugiFilm = new Movie("triller", "Drugi film", 2001, joakimNawrot, drugiFilmActors);
         Movie trzeciFilm = new Movie("action", "Trzeci film", 2020, joakimNawrot, trzeciFilmActors);
 
-        MovieLibrary library = new MovieLibrary();
 
+        MovieLibrary library = new MovieLibrary();
         library.addMovie(new Movie("comedy", "Pierwszy film", 1955, wandaRusik, pierwszyFilmActors));
         library.addMovie(drugiFilm);
         library.addMovie(trzeciFilm);
 
-        library.printMovieYear(2000, 2020);
+
+        //library.printMovieYear(2000, 2020);
 
         // library.printMoviesWithActors("Anna", "Kulow");
 
+        Ch21_Menu menu = new Ch21_Menu();
+        int option = menu.printMenu();
+
+        switch (option) {
+            case 1:
+                System.out.println("Podaj dwie daty");
+                System.out.println("Pierwsza data");
+                int startDay = new Scanner(System.in).nextInt();
+                System.out.println("Druga data");
+                int endDay = new Scanner(System.in).nextInt();
+                library.printMovieYear(startDay, endDay);
+                break;
+            case 2:
+                Random r = new Random();
+                int randomitem = r.nextInt(library.getMovies().size());
+                library.printRandomMovie(randomitem);
+                break;
+            case 3:
+                System.out.println("Podaj imię aktora: ");
+                String firstName = new Scanner(System.in).next();
+                System.out.println("Podaj nazwisko aktora: ");
+                String lastName = new Scanner(System.in).next();
+                library.printMoviesWithActors(firstName, lastName);
+                break;
+            case 4:
+                System.out.println("Podaj nazwe:");
+                String name = new Scanner(System.in).next();
+                System.out.println("Podaj tytuł:");
+                String title = new Scanner(System.in).next();
+                System.out.println("Podaj rok produkcji:");
+                int productionYear = new Scanner(System.in).nextInt();
+                System.out.println("Podaj imie rezysera:");
+                String firstNameDirectorFromUser = new Scanner(System.in).next();
+                System.out.println("Podaj nazwisko rezysera:");
+                String laseNameDirectorFromUser = new Scanner(System.in).next();
+                System.out.println("Ilu aktorów chcesz dodać:");
+                int howManyActorsFromUSer = new Scanner(System.in).nextInt();
+
+                List<Actor> actorsFromUser = new ArrayList<>();
+                for (int i = 0; i < howManyActorsFromUSer; i++) {
+                    System.out.println("Podaj imie " + (i + 1) + " aktora:");
+                    String firstNameActorFromUser = new Scanner(System.in).next();
+                    System.out.println("Podaj nazwisko " + (i + 1) + " aktora:");
+                    String lastNameActorFromUser = new Scanner(System.in).next();
+                    Actor actorFromUser = new Actor(firstNameActorFromUser, lastNameActorFromUser);
+                }
+
+                Director director = new Director(firstNameDirectorFromUser, laseNameDirectorFromUser);
+
+
+                library.addMovie(new Movie(name, title, productionYear, director, actorsFromUser));
+                library.printMovie(title);
+
+                break;
+
+
+//                System.out.println("Podaj nazwe filmu, o którym informacji potrzebujesz:");
+//                String titleFromUser = new Scanner(System.in).next();
+//
+//                library.printMovie(titleFromUser);
+
+            default:
+                System.out.println("Podałeś liczbe z poza zakresu");
+        }
 
     }
 }

@@ -7,6 +7,26 @@ public class ChEx_Main {
 
     public static void main(String[] args) {
 
+        //        List<String> actors = new ArrayList<>();
+//        actors.add("AA");
+//        actors.add("BB");
+//        actors.add("CC");
+//
+//        List<Actor> actorsSecond = new ArrayList<>();
+//        actorsSecond.add(new Actor("AA", "LA"));
+//        actorsSecond.add(new Actor("BB", "LB"));
+//        actorsSecond.add(new Actor("CC", "LC"));
+//
+//        for (String act :
+//                actors) {
+//            System.out.println(act);
+//        }
+//
+//        for (Actor act2 :
+//                actorsSecond) {
+//            System.out.println(act2.getFirstName() + " " + act2.getLastName());
+//        }
+
         List<First> listFirst1 = new ArrayList<>();
         listFirst1.add(new First("Jabłko"));
         listFirst1.add(new First("Gruszka"));

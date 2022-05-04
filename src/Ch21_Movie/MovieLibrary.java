@@ -38,7 +38,7 @@ public class MovieLibrary {
 
     }
 
-    public void printMovie(String movieName) {
+    public void printMovieDetails(String movieName) {
         for (Movie movie :
                 movies) {
             if (movie.getTitle().contains(movieName)) {

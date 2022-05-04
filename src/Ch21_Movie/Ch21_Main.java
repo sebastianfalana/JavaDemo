@@ -15,26 +15,6 @@ public class Ch21_Main {
         Actor trevorSzaszy = new Actor("Trewor", "Szaszy");
         Actor annaKulow = new Actor("Anna", "Kulow");
 
-//        List<String> actors = new ArrayList<>();
-//        actors.add("AA");
-//        actors.add("BB");
-//        actors.add("CC");
-//
-//        List<Actor> actorsSecond = new ArrayList<>();
-//        actorsSecond.add(new Actor("AA", "LA"));
-//        actorsSecond.add(new Actor("BB", "LB"));
-//        actorsSecond.add(new Actor("CC", "LC"));
-//
-//        for (String act :
-//                actors) {
-//            System.out.println(act);
-//        }
-//
-//        for (Actor act2 :
-//                actorsSecond) {
-//            System.out.println(act2.getFirstName() + " " + act2.getLastName());
-//        }
-
 
         List<Actor> pierwszyFilmActors = new ArrayList<>();
         pierwszyFilmActors.add(januszKowal);
@@ -61,13 +41,13 @@ public class Ch21_Main {
 
 
         MovieLibrary library = new MovieLibrary();
+        // tutaj po prostu ćwiczyłem i od razu dodałem objekt Movie do listy library
         library.addMovie(new Movie("comedy", "Pierwszy film", 1955, wandaRusik, pierwszyFilmActors));
         library.addMovie(drugiFilm);
         library.addMovie(trzeciFilm);
 
 
         //library.printMovieYear(2000, 2020);
-
         // library.printMoviesWithActors("Anna", "Kulow");
 
         Ch21_Menu menu = new Ch21_Menu();
@@ -83,9 +63,19 @@ public class Ch21_Main {
                 library.printMovieYear(startDay, endDay);
                 break;
             case 2:
+                //tutaj nie wiem czy dobrze zrozumialem ze system ma losowac dowolny film i wyswietlic wszytskie jego dane
+                //czy tez losowy film ma podac uzytkownik i system ma wyswietlic wszytskie jego dane, daltego tez zrobiłem
+                //dwa sposoby. Pierwszy to losowany film przez system a drugi (który jest zakomentowany) podawany przez uzytkownika
+                //Jak checmy druga opcje to po prostu odkomentowujemy jedna a zdruga zakomentowujemy.
+
                 Random r = new Random();
                 int randomitem = r.nextInt(library.getMovies().size());
                 library.printRandomMovie(randomitem);
+
+//                System.out.println("Podaj nazwe filmu, o którym informacji potrzebujesz:");
+//                String titleFromUser = new Scanner(System.in).next();
+//                library.printMovieDetails(titleFromUser);
+
                 break;
             case 3:
                 System.out.println("Podaj imię aktora: ");
@@ -119,17 +109,10 @@ public class Ch21_Main {
 
                 Director director = new Director(firstNameDirectorFromUser, laseNameDirectorFromUser);
 
-
                 library.addMovie(new Movie(name, title, productionYear, director, actorsFromUser));
-                library.printMovie(title);
+                library.printMovieDetails(title);
 
                 break;
-
-
-//                System.out.println("Podaj nazwe filmu, o którym informacji potrzebujesz:");
-//                String titleFromUser = new Scanner(System.in).next();
-//
-//                library.printMovie(titleFromUser);
 
             default:
                 System.out.println("Podałeś liczbe z poza zakresu");

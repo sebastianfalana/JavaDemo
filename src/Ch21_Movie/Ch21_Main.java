@@ -104,12 +104,13 @@ public class Ch21_Main {
                     String firstNameActorFromUser = new Scanner(System.in).next();
                     System.out.println("Podaj nazwisko " + (i + 1) + " aktora:");
                     String lastNameActorFromUser = new Scanner(System.in).next();
-                    Actor actorFromUser = new Actor(firstNameActorFromUser, lastNameActorFromUser);
+                    actorsFromUser.add(new Actor(firstNameActorFromUser, lastNameActorFromUser));
                 }
 
                 Director director = new Director(firstNameDirectorFromUser, laseNameDirectorFromUser);
 
                 library.addMovie(new Movie(name, title, productionYear, director, actorsFromUser));
+//                library.addMovie(new Movie(name, title, productionYear, director, library.actorsFromUser(howManyActorsFromUSer)));
                 library.printMovieDetails(title);
 
                 break;

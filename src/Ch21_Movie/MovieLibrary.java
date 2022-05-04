@@ -2,6 +2,7 @@ package Ch21_Movie;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class MovieLibrary {
 
@@ -64,5 +65,18 @@ public class MovieLibrary {
                 }
             }
         }
+    }
+
+    public List<Actor> actorsFromUser(int howManyActorsFromUSer) {
+
+        List<Actor> actorsFromUser = new ArrayList<>();
+        for (int i = 0; i < howManyActorsFromUSer; i++) {
+            System.out.println("Podaj imie " + (i + 1) + " aktora:");
+            String firstNameActorFromUser = new Scanner(System.in).next();
+            System.out.println("Podaj nazwisko " + (i + 1) + " aktora:");
+            String lastNameActorFromUser = new Scanner(System.in).next();
+            actorsFromUser.add(new Actor(firstNameActorFromUser, lastNameActorFromUser));
+        }
+        return actorsFromUser;
     }
 }

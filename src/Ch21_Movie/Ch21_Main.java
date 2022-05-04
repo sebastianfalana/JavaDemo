@@ -98,6 +98,8 @@ public class Ch21_Main {
                 System.out.println("Ilu aktorów chcesz dodać:");
                 int howManyActorsFromUSer = new Scanner(System.in).nextInt();
 
+                //dodałem tez metodę do MovieLibrary, takze jak odkumentujemy linijke 144 a zakomentujemy całego for-a
+                //u dołu razem z linijka 103, wtedy odpali sie metoda actorsFromUser() z MovieLibrary
                 List<Actor> actorsFromUser = new ArrayList<>();
                 for (int i = 0; i < howManyActorsFromUSer; i++) {
                     System.out.println("Podaj imie " + (i + 1) + " aktora:");

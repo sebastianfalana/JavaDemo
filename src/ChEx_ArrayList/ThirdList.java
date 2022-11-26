@@ -13,10 +13,10 @@ public class ThirdList {
         return firstList;
     }
 
-    public void print() {
+    public void printFirst() {
         for (First firsts :
                 firstList) {
-            System.out.println(firsts.getFirstListValue());
+            System.out.println("Zawartość firstList: " + firsts.getFirstListValue());
         }
 
     }

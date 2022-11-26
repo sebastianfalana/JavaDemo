@@ -40,9 +40,22 @@ public class ChEx_Main {
         List<ThirdList> listThird1 = new ArrayList<>();
         listThird1.add(new ThirdList(listFirst1));
 
+        System.out.println("Rozmiar listFirst1: " + listFirst1.size());
+        System.out.println("Rozmiar listFirst2: " + listFirst2.size());
+
+        for (First first :
+                listFirst1) {
+            System.out.println("Zawartość listFirst1: " + first.getFirstListValue());
+        }
+
+        for (First first2 :
+                listFirst2) {
+            System.out.println("Zawartość listFirst2: " + first2.getFirstListValue());
+        }
+
         for (ThirdList thirdLists :
                 listThird1) {
-            thirdLists.print();
+            thirdLists.printFirst();
         }
 
 //        for (First firsts :
